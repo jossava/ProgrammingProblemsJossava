@@ -10,6 +10,8 @@ int tareaRepresentacionGrafos(int n, int m){
 	//map<int, int> aristas [m]; así se utilizan los mapas.
 	for(int k=0 ; k<m ; k++){
 		cin >> u >> v;
+		g[u][v]=1;
+		g[v][u]=1;
 		for (int i = 0; i < n; ++i){
 			for (int j = 0; j < n; ++j){
 				if(g[i][j]!=1){
@@ -17,8 +19,6 @@ int tareaRepresentacionGrafos(int n, int m){
 				}
 			}
 		}
-		g[u][v]=1;
-		g[v][u]=1;
 	}
 	for (int i = 0; i < n; ++i){
 		for (int j = 0; j < n; ++j){
@@ -28,6 +28,21 @@ int tareaRepresentacionGrafos(int n, int m){
 	}
 
 	//representación del grafo en listas de adyacencia.
+	vector<int> g1 [n];
+	for (int j = 0; j < n; ++j){
+		g1[j].push_back(j);
+	}
+	for(int k=0 ; k<m ; k++){
+		cin >> u >> v;
+		g1[u].push_back(v);
+		g1[v].push_back(u);
+	}
+	for (int i = 0; i < n; ++i){
+		for (int l = 0; l < g1[i].size(); ++l){
+			cout << g1[i].at(l) << " ";
+		}
+		cout << endl;
+	}
 }
 
 int main(){
