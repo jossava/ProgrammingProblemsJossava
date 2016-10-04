@@ -12,7 +12,7 @@ int limpiar(bool arr[], int size){
 // Problema resuelto para el caso en que no se repitan costos.
 int main(){
 	bool seen[MAXN];
-	bool pos[MAXN];
+	int pos[MAXN];
 	pair<int,int> pareja; 
 	int N,C,I,i=0,j=0,pos1,pos2,k,aux;
 	cin >> N;
@@ -20,18 +20,20 @@ int main(){
 		cin >> C;
 		cin >> I;
 		pareja=make_pair(0,0);
-		limpiar(seen, I);
-		limpiar(pos, I);
+		for(int k=0 ; k<I ; k++){
+			seen[k]=false;
+			pos[k]=0;
+		}
 		i=0;
 		while(i<I){
 			int costo;
 			cin >> costo;
-			pos[costo]=i+1;
-			if(seen[C-costo]==1){
-				pareja=make_pair(pos[costo],pos[C-costo]);
+			if(seen[C-costo]){
+				pareja=make_pair(i+1,pos[C-costo]);
 				i=I;
 			}else{
-				seen[costo]=1;
+				pos[costo]=i+1;
+				seen[costo]=true;
 			}
 			i++;
 		}
