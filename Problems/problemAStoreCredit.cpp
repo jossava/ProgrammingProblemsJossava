@@ -1,7 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
+
+const int MAXN = 1010;
 
 int main(){
 	int N,C,I,i=0,j=0,pos1,pos2,k,aux;

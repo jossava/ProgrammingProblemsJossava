@@ -53,7 +53,7 @@ int main(){
 }
 
 int ejemploVectores(){
-	vector <string> palabras; //(5) tamaño vector.
+	vector <string> palabras (5); //(5) tamaño vector.
 	for(int i=0 ; i<palabras.size() ; i++){ 
 		cin >> palabras[i]; 
 		cout << palabras[i] << endl;
