@@ -21,6 +21,8 @@ int main(){
 				if(miVector[n]+miVector[m]==C && m!=n){
 					pos1=n+1;
 					pos2=m+1;
+					m=miVector.size();
+					n=miVector.size();
 				}
 			}
 		}
