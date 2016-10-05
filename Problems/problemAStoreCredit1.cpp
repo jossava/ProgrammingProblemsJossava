@@ -15,8 +15,10 @@ int main(){
 	int pos[MAXN];
 	pair<int,int> pareja; 
 	int N,C,I,i=0,j=0,pos1,pos2,k,aux;
+	bool b;
 	cin >> N;
 	while(j<N){
+		b=true;
 		cin >> C;
 		cin >> I;
 		pareja=make_pair(0,0);
@@ -28,12 +30,14 @@ int main(){
 		while(i<I){
 			int costo;
 			cin >> costo;
-			if(seen[C-costo]){
-				pareja=make_pair(i+1,pos[C-costo]);
-				i=I;
-			}else{
-				pos[costo]=i+1;
-				seen[costo]=true;
+			if(b){
+				if(seen[C-costo]){
+					pareja=make_pair(i+1,pos[C-costo]);
+					b=false;
+				}else{
+					pos[costo]=i+1;
+					seen[costo]=true;
+				}
 			}
 			i++;
 		}
