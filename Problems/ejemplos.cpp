@@ -61,3 +61,15 @@ int ejemploVectores(){
 	vector<int> g [1000]; //Grafo de 1000 nodos, cada uno con un vector de enteros.
 	return 0;
 }
+
+int comoUsarGetLine(){
+	string line;
+	while (getline(cin, line)){
+		stringstream ss(line); // El stream ss se crea con line
+		string word;
+		int count = 0;
+		while (ss >> word) count++;// ss se usa igual que cin
+		cout << count << endl;
+	}
+	return 0;
+}
