@@ -37,7 +37,8 @@ int main(){
 		ans.clear();
 		for (int i = 0; i < m; ++i){
 			cin >> x >> y;
-			g[x-1].push_back(y-1);
+			x--;y--;
+			g[x].push_back(y);
 		}
 		sortTop(n);
 		cout << ans[0]+1;
@@ -47,4 +48,3 @@ int main(){
 	}
 	return 0;
 }
-

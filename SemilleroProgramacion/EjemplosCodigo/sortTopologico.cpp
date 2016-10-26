@@ -21,7 +21,7 @@ void dfs(int u) {
 }
  
 void sortTop(int n) {
-  for(int i = 0; i <= n; ++i) state[i] = false;
+  for(int i = 0; i < n; ++i) state[i] = false;
   for(int i = 0; i < n; ++i) {
     if(!state[i]) dfs(i);
   }
@@ -32,7 +32,8 @@ int main() {
   int n;
   cin >> n;
   int nodes = n;
-  while(n --) {
+  n--;
+  while(n--) {
       int x, y;
       cin >> x >> y;
       g[x].push_back(y);
